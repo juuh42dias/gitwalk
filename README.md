@@ -1,6 +1,6 @@
 # Banking Account - SA
 
-![rspec](https://ruby.ci/badges/9fec11b5-097d-427b-bbdf-757c2aa25902/rspec)
+![Ruby CI](https://github.com/github/docs/actions/workflows/ruby-ci.yml/badge.svg)
 
 This is a simple fetcher Github Repo Stars.
 
