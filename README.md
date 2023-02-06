@@ -1,4 +1,4 @@
-# Banking Account - SA
+# GitWalk :octocat:
 
 ![Ruby CI](https://github.com/juuh42dias/gitwalk/actions/workflows/ruby-ci.yml/badge.svg)
 
