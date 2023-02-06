@@ -26,7 +26,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           arch: aarch64
-          ruby-version: 3.1
+          ruby-version: 3.2
           bundler-cache: true
       - name: Run linters
         run: bundle install && bundle exec rubocop --parallel
@@ -63,11 +63,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           arch: aarch64
-          ruby-version: 3.1
+          ruby-version: 3.2
           bundler-cache: true
       - name: Create database
         run: |
           bundle install
+          bin/setup
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
