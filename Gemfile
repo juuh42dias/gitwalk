@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -21,7 +23,17 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 3.1'
+  gem 'pry-meta', '~> 0.0.10'
   gem 'rspec-rails', '~> 6.0'
+  gem 'shoulda-matchers', '~> 5.3'
+  gem 'webmock', '~> 3.18'
+
+  gem 'brakeman', '~> 5.4'
+  gem 'bundler-audit', '~> 0.9.1'
+  gem 'rubocop-rails', '~> 2.17'
+  gem 'rubocop-rspec', '~> 2.18'
 end
 
 group :development do
@@ -29,8 +41,8 @@ group :development do
   # gem "spring"
   gem 'better_errors', '~> 2.9'
   gem 'binding_of_caller', '~> 1.0'
-  gem 'pry-meta', '~> 0.0.10'
 end
 
-gem 'http', '~> 5.1'
+gem 'faraday', '~> 2.7'
+gem 'interactor', '~> 3.0'
 gem 'sidekiq', '~> 7.0'
