@@ -71,6 +71,72 @@ you can check app running on http://localhost:3000
 * Procfile runs web and worker services
 
 * If you prefer use docker, run `docker-compose up`
-* Obs: if you have Macbook M1, maybe you should run `docker build . --platform linux/amd64` to build images using amd64 arch
+* Obs: if you have Macbook M1, before run docker-compose maybe you should run `docker build . --platform linux/amd64` to build images using amd64 arch
 
 ## [Project Use](#project-use)
+### Creating user
+**Request:**
+```shell
+curl --request POST \
+  --url 'http://localhost:3000/api/v1/github/users?=' \
+  --header 'Content-Type: application/json' \
+  --cookie BetterErrors-2.9.1-CSRF-Token=15c9505e-551f-480f-b527-72efd587d7c9 \
+  --data '{
+  "username": "juuh42dias"
+}'
+```
+**Response:**
+```json
+{
+    "user": {
+        "id": 2,
+        "username": "juuh42dias",
+        "created_at": "2023-02-06T03:49:47.809Z",
+        "updated_at": "2023-02-06T03:49:47.809Z"
+    },
+    "message": "We are processing your repo projects"
+}
+```
+### Retrieving user (with your projects)
+
+**Request:**
+```shell
+curl --request GET \
+  --url 'http://localhost:3000/api/v1/github/users/juuh42dias?username=' \
+  --cookie BetterErrors-2.9.1-CSRF-Token=15c9505e-551f-480f-b527-72efd587d7c9
+```
+**Response:**
+```json
+{
+    "id": 2,
+    "username": "juuh42dias",
+    "created_at": "2023-02-06T03:49:47.809Z",
+    "updated_at": "2023-02-06T03:49:47.809Z",
+    "projects": [
+        {
+            "id": 31,
+            "name": "100-days-of-code",
+            "star_count": 0,
+            "user_id": 2,
+            "created_at": "2023-02-06T03:49:50.976Z",
+            "updated_at": "2023-02-06T03:49:50.976Z"
+        },
+        {
+            "id": 32,
+            "name": "agendamento-vacina",
+            "star_count": 1,
+            "user_id": 2,
+            "created_at": "2023-02-06T03:49:50.976Z",
+            "updated_at": "2023-02-06T03:49:50.976Z"
+        },
+        {
+            "id": 33,
+            "name": "aprenda-rubyonrails",
+            "star_count": 7,
+            "user_id": 2,
+            "created_at": "2023-02-06T03:49:50.976Z",
+            "updated_at": "2023-02-06T03:49:50.976Z"
+        }
+    ]
+}
+```
