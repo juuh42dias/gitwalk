@@ -19,7 +19,7 @@ RSpec.describe Users::Create, type: :model do
       end
     end
 
-    context 'When user had invalid username' do
+    context 'when user had invalid username' do
       let(:username) { nil }
 
       before do
@@ -34,7 +34,7 @@ RSpec.describe Users::Create, type: :model do
     end
 
     # TODO: Create more bad path scenarios
-    context 'When user has github invalid username' do
+    context 'when user has github invalid username' do
       pending 'it should destroy or rollback creating user'
     end
   end
