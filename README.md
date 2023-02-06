@@ -14,7 +14,8 @@ This is a simple fetcher Github Repo Stars.
   * [Running tests](#running-tests)
   * [Running app](#running-app)
 * [Usage Gitwalk](#project-usage)
-* [Api Documentation](https://github.com/juuh42dias/bank_account/wiki/API-Documentation)
+  * [Creating user](#creating-user)
+  * [Retrieving data](#retrieving-data)
 * [Contact](#contact)
 * [Contributing](#contributing)
 
@@ -74,7 +75,7 @@ you can check app running on http://localhost:3000
 * Obs: if you have Macbook M1, before run docker-compose maybe you should run `docker build . --platform linux/amd64` to build images using amd64 arch
 
 ## [Project Use](#project-use)
-### Creating user
+### [Creating user](#creating-user)
 **Request:**
 ```shell
 curl --request POST \
@@ -97,7 +98,7 @@ curl --request POST \
     "message": "We are processing your repo projects"
 }
 ```
-### Retrieving user (with your projects)
+### [Retrieving user (with your projects)](#retrieving-data)
 
 **Request:**
 ```shell
@@ -140,3 +141,19 @@ curl --request GET \
     ]
 }
 ```
+Enjoy the app!
+
+## [Contact](#contact)
+
+[Juliana Dias](juliana.dev) – <hello@juliana.dev>
+
+[https://gitlab.com/juuh42dias/](https://gitlab.com/juuh42dias)
+[https://github.com/juuh42dias/](https://github.com/juuh42dias/)
+
+## [Contributing](#contributing)
+
+1. Fork it (<https://github.com/juuh42dias/bank_account/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
