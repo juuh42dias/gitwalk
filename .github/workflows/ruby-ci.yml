@@ -27,7 +27,7 @@ jobs:
         with:
           arch: aarch64
           ruby-version: 3.2
-          bundler-cache: false
+          bundler-cache: true
       - name: Run linters
         run: bundle install && bundle exec rubocop --parallel
       - name: Ruby security checks
@@ -64,7 +64,7 @@ jobs:
         with:
           arch: aarch64
           ruby-version: 3.2
-          bundler-cache: false
+          bundler-cache: true
       - name: Create database
         run: |
           bundle install
