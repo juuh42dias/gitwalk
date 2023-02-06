@@ -29,7 +29,7 @@ jobs:
           ruby-version: 3.0
           bundler-cache: false
       - name: Run linters
-        run: bundle exec rubocop --parallel
+        run: bundle install && bundle exec rubocop --parallel
       - name: Ruby security checks
         run: |
           bundle exec bundler-audit --update
@@ -68,6 +68,7 @@ jobs:
           bundler-cache: false
       - name: Create database
         run: |
+          bundle install
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
