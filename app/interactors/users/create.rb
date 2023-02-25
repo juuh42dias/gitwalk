@@ -5,13 +5,13 @@ module Users
     include Interactor
 
     def call
-      create_user
+      create_user!
       create_projects
     end
 
     private
 
-    def create_user
+    def create_user!
       @user = User.create!(username: context.username)
       context.user = @user
     rescue StandardError => e
